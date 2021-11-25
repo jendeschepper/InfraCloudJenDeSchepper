@@ -18,5 +18,5 @@ coordinates = [devnet_lat,devnet_lon]
 map = folium.Map(location=coordinates, tiles='OpenStreetMap',  zoom_start=12)
 map
 # save method of Map object will create a map
-# saved in Downloads
-# map.save("geopy_location.html")
+#  saved in Downloads
+map.save("geopy_location.html")
