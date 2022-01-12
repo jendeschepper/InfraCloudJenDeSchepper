@@ -9,7 +9,7 @@ status_code=$(curl -ks \
 -o /dev/null \
 -u "$USERNAME:$PASSWORD" \
 -H "Accept: XXXXDXXXXX" \
-"https://$IP_HOST/restconf/data/ietf-interfaces:interfaces/interface=XXXXEXXXXX ")
+"https://$IP_HOST/restconf/data/ietf-interfaces:interfaces/interface=GigabitEthernet1")
 
 echo $status_code
 if [ $status_code -eq XXXXFXXXXX] ; then 
