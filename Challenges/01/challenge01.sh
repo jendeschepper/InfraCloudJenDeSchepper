@@ -5,7 +5,7 @@ INTERFACE=GigabitEthernet1
 USERNAME=cisco
 PASSWORD=cisco123!
 status_code=$(curl -ks \
--w "%{./log.txt}" \
+-w "%{log.txt}" \
 -o /dev/null \
 -u "$USERNAME:$PASSWORD" \
 -H "Accept: text" \
@@ -16,4 +16,4 @@ if [ $status_code -eq 200] ; then
    echo "Yes - interface is up - returning status code: 200"
 else
    echo "No - interface is down - returning status code: $status_code"
-exit 1s
+fi
