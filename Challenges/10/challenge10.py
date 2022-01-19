@@ -8,7 +8,7 @@ Username = "cisco"
 Password = "cisco123!"
 URL = f'https://{IP_HOST}:443/restconf/data/Cisco-IOS-XE-native:native/logging/monitor/severity'
 HEADER = {'Accept':'application/yang-data+json'}
-basicauth = {Username, Password}
+basicauth = (Username, Password)
 #-i = include http response header
 #-k = skip verification
 #-X = request method = "OPTIONS"
@@ -16,4 +16,4 @@ basicauth = {Username, Password}
 #-u = username and Password
 
 result = requests.options(URL, auth=basicauth, headers=HEADER, verify=False)
-print(result)
+print(result.text)
