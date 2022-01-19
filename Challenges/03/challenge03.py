@@ -5,5 +5,5 @@ atk = {
     "refreshtokenexpires_in":7776000
 }
 
-access_token = XXXXAXXXXX ["access_token"]
-print(XXXXBXXXXX )
+access_token = atk["access_token"]
+print(access_token)
