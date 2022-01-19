@@ -5,7 +5,7 @@ INTERFACE=GigabitEthernet1
 USERNAME=cisco
 PASSWORD=cisco123!
 status_code=$(curl -ks \
--w "%{INTERFACE}" \
+-w "%{http_code}" \
 -o /dev/null \
 -u "$USERNAME:$PASSWORD" \
 -H "Accept: text" \
