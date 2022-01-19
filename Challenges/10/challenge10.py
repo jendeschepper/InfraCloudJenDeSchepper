@@ -17,4 +17,5 @@ HEADER = {'Accept':'application/yang-data+json'}
 basicauth = (Username, Password)
 
 result = requests.options(URL, auth=basicauth, headers=HEADER, verify=False)
-print(result.text)
+
+print(result.headers)
