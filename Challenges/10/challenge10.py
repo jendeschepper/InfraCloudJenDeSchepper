@@ -1,6 +1,7 @@
 from textwrap import indent
 import requests
 import json
+requests.packages.urllib3.disable_warnings()
 
 #elementen in de curl script
 #-i = include http response header
