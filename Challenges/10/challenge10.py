@@ -1,4 +1,6 @@
+from textwrap import indent
 import requests
+import json
 
 #elementen in de curl script
 #-i = include http response header
@@ -17,3 +19,6 @@ basicauth = (Username, Password)
 result = requests.options(URL, auth=basicauth, headers=HEADER, verify=False)
 
 print(result.headers)
+
+#parsed=json.loads(result.headers)
+#print(json.dumps(parsed, indent=1))
