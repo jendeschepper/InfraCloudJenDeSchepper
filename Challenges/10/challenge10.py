@@ -1,6 +1,4 @@
 import requests
-import json
-import os
 
 #elementen in de curl script
 #-i = include http response header
