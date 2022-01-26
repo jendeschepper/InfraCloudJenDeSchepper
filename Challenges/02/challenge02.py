@@ -5,10 +5,7 @@ uri_scheme = 'https://'
 uri_authority_server = 'api.ciscospark.com'
 uri_api_path = '/v1/people/me'
 url = uri_scheme + uri_authority_server + uri_api_path  
-headers = {
-    'Authorization': ' bearer {}'.format(current_access_token),
-    'Content-Type': 'application/json'
-}
+headers = {'Authorization': ' bearer {}'.format(current_access_token),'Content-Type': 'application/json'}
 res = requests.get(url, headers=headers)
 
 if res.status_code == 200:
