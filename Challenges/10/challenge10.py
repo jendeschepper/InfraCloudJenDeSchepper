@@ -18,6 +18,4 @@ basicauth = (Username, Password)
 
 result = requests.options(URL, auth=basicauth, headers=HEADER, verify=False)
 
-#print(result.headers)
-
 print(json.dumps(dict(result.headers), indent=1))
