@@ -37,4 +37,18 @@ def AttatchMembersToGroups(groupName, MemberList):
     return allMembers
 
 def main():
-    
+    memberList=FindPersonsAndGroups("webexgroups.xlsx")
+    groupList=MakeListOfGroups(memberList)
+    allMembers=[]
+    groups_struc={}
+    groups_struc['groups']=[]
+    for group in groupList:
+        allMembers=AttatchMembersToGroups(group, memberList)
+        del allMembers[0]
+        groupDict={"group":{"groupName":group, "members":allMembers}}
+        groups_struc['groups'].append(groupDict)
+    js_groups=json.dumps(groups_struc)
+    print(js_groups)
+
+if __name__=='__main__':
+       main()
