@@ -1,5 +1,5 @@
 #! /bin/bash
-IP_HOST=sandbox-iosxe-recomm-1.cisco.com
+IP_HOST=sandboxdnac.cisco.com
 ping -c 5 $IP_HOST 
 INTERFACE=GigabitEthernet1
 USERNAME=devnetuser
