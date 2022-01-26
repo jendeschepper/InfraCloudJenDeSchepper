@@ -5,7 +5,7 @@ import json
 def FindPersonsAndGroups(xlf):
     wb=xlrd.open_workbook(xlf)
     sheet=wb.sheet_by_index(0)
-    numberOfRows=sheet.nrows()
+    numberOfRows=sheet.nrows
     members=[]
     for idx in range(numberOfRows):
         if idx>0:
@@ -37,7 +37,7 @@ def AttatchMembersToGroups(groupName, MemberList):
     return allMembers
 
 def main():
-    memberList=FindPersonsAndGroups("webexgroups.xlsx")
+    memberList=FindPersonsAndGroups("/home/devasc/labs/GitJenDeSchepper/InfraCloudJenDeSchepper/Challenges/12/webexgroups.xlsx")
     groupList=MakeListOfGroups(memberList)
     allMembers=[]
     groups_struc={}
@@ -47,7 +47,7 @@ def main():
         del allMembers[0]
         groupDict={"group":{"groupName":group, "members":allMembers}}
         groups_struc['groups'].append(groupDict)
-    js_groups=json.dumps(groups_struc)
+    js_groups=json.dumps(groups_struc, indent=1)
     print(js_groups)
 
 if __name__=='__main__':
