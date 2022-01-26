@@ -10,10 +10,10 @@ password = 'Cisco123!'
 url = f'https://{IP}/restconf/data/ietf-interfaces:interfaces/interface={interface}'
 headers = {"Accept":"application/yang-data+json", "Content-type":"applicaton/yang-data+json"}
 auth = (user,password)
-status = requests.get(url, auth=auth, headers=headers, verify=False)
-status_code =str(status.status_code)
+res = requests.get(url, auth=auth, headers=headers, verify=False)
+status_code = res.status_code
 print(status_code)
-if status.status_code == 200:
-    print('Yes - Interface is up - Returing status code: '+status_code)
+if res.status_code == 200:
+    print('Yes - Interface is up - Returning status code: 200')
 else:
-    print('No - Interface is Down - Returing status code: '+status_code)
+    print(f'No - Interface is Down - Returning status code: {res.status_code}')
