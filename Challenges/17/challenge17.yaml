@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    GIT_REPO: https://github.com/nikolayg/sample-python-api.git
+    GIT_BRANCH: master
+    PROJECT_NAME: SAMPLE-PYTHON-API
+  gather_facts: //github.com/nikolayg/sample-python-api.git
+
+  tasks:
+    - name: Clone a git repository into {{PROJECT_NAME}} folder
+      git:
+        repo: "{{ GIT_REPO }}"
+        version: "{{ GIT_BRANCH }}"
+        dest: "/home/devasc/labs/devnet-src/ansible-git/sample-python-api"
+        accept_hostkey: yes
+      become: no
