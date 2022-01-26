@@ -12,6 +12,6 @@
       git:
         repo: "{{ GIT_REPO }}"
         version: "{{ GIT_BRANCH }}"
-        dest: "/home/devasc/labs/devnet-src/ansible-git/sample-python-api"
+        dest: "/home/devasc/labs/devnet-src/ansible-git/sample-python-api-test"
         accept_hostkey: yes
       become: no
