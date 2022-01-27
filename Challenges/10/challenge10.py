@@ -1,4 +1,5 @@
 from textwrap import indent
+from selenium import webdriver
 import requests
 import json
 requests.packages.urllib3.disable_warnings()
@@ -18,4 +19,7 @@ HEADER = {'Accept':'application/yang-data+json'}
 basicauth = (Username, Password)
 
 result = requests.options(URL, auth=basicauth, headers=HEADER, verify=False)
+
+print(result.url[:5], result.raw.version, result.status_code, result.reason)
+
 print(json.dumps(dict(result.headers), indent=2))
