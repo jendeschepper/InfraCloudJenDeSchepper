@@ -2,8 +2,8 @@ from turtle import shearfactor
 import xlrd
 import json
 
-def FindPersonsAndGroups(xlf):
-    wb=xlrd.open_workbook(xlf)
+def FindPersonsAndGroups(ExcelFile):
+    wb=xlrd.open_workbook(ExcelFile)
     sheet=wb.sheet_by_index(0)
     numberOfRows=sheet.nrows
     members=[]
@@ -19,8 +19,8 @@ def FindPersonsAndGroups(xlf):
 def MakeListOfGroups(memberList):
     groups=[]
     member=None
-    for line in memberList:
-        group=line['group']
+    for member in memberList:
+        group=member['group']
         if group not in groups:
             groups.append(group)
     return groups
@@ -47,7 +47,7 @@ def main():
         del allMembers[0]
         groupDict={"group":{"groupName":group, "members":allMembers}}
         groups_struc['groups'].append(groupDict)
-    js_groups=json.dumps(groups_struc, indent=1)
+    js_groups=json.dumps(groups_struc, indent=2)
     print(js_groups)
 
 if __name__=='__main__':
