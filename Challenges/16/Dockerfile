@@ -1,7 +1,6 @@
-FROM debian
-RUN apt-get install httpd
+FROM httpd
 COPY httpd.conf /usr/local/apache2/conf/
 COPY index.html /usr/local/apache2/www
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
-RUN a2enmod rewrite
+CMD httpd -D FOREGROUND
 EXPOSE 8081
+RUN echo "ServerName localhost" >> /usr/local/apache2/conf/apache2.conf
