@@ -1,5 +1,7 @@
 FROM debian
-RUN sudo apt-get insall httpd
+RUN apt-get install httpd
+COPY httpd.conf /usr/local/apache2/conf/
+COPY index.html /usr/local/apache2/www
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
 RUN a2enmod rewrite
-RUN a2enmod port 8081
-RUN a2enmod virtualhost port 8081
+EXPOSE 8081
