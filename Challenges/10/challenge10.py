@@ -1,5 +1,4 @@
 from textwrap import indent
-from selenium import webdriver
 import requests
 import json
 requests.packages.urllib3.disable_warnings()
