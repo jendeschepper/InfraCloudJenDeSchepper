@@ -21,7 +21,6 @@ groups_struc = {
    ]
 }
 
-
 people=[]
 
 for group in groups_struc["groups"]:
@@ -32,14 +31,18 @@ for group in groups_struc["groups"]:
     person=[groupname, naam, email]
     people.append(person.copy())
 
-print(people)
+#print(people)
 
 workbook=xlwt.Workbook()
 sheet=workbook.add_sheet('people')
 
 for row in range(len(people)-1):
+  rowstr=""
   for column in range(3):
-    sheet.write(row, column, people[row][column])
-    print(people[row][column])
-print(sheet)
-workbook.save('/home/devasc/labs/GitJenDeSchepper/InfraCloudJenDeSchepper/Challenges/11/output.xlsx')
+    #sheet.write(row, column, people[row][column])
+    rowstr+=people[row][column]
+    rowstr+=", "
+    #print(people[row][column])
+  print(rowstr)
+
+#workbook.save('/home/devasc/labs/GitJenDeSchepper/InfraCloudJenDeSchepper/Challenges/11/output.xlsx')
