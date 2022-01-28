@@ -1,24 +1,45 @@
-import xlrd
+import xlwt
 
 groups_struc = {
  "groups": [
-      { "group": { "group_id": "G-A" 
-                 , "group_name": "DEVASC_A" ,    
+      { "group": { "group_name": "DEVASC_A" ,    
                    "members": [   
-                     {"person_id": "P-1" , "person_name": "Noel", "email": "noel@odisee.be"},
-                     {"person_id": "P-2" , "person_name": "Mary", "email": "mary@odisee.be"},
-                     {"person_id": "P-3" , "person_name": "Jens", "email": "jens@odisee.be"} 
+                     {"person_name": "Noel", "email": "noel@student.bxl.be"},
+                     {"person_name": "Mary", "email": "mary@student.bxl.be"},
+                     {"person_name": "Jens", "email": "jens@student.bxl.be"}
                    ]
                  }
       },
-      { "group": { "group_id": "G-B" 
-                 , "group_name": "DEVASC_B" ,    
+      { "group": { "group_name": "DEVASC_B" ,    
                    "members": [   
-                     {"person_id": "P-4" ,"person_name": "Ives", "email": "ives@odisee.be"}, 
-                     {"person_id": "P-5" ,"person_name": "John", "email": "john@odisee.be"}, 
-                     {"person_id": "P-6" ,"person_name": "Alec", "email": "alec@odisee.be"} 
+                     {"person_name": "Ives", "email": "ives@student.bxl.be"}, 
+                     {"person_name": "John", "email": "john@student.bxl.be"}, 
+                     {"person_name": "Alec", "email": "alec@student.bxl.be"}
                    ]     
                  }
       } 
    ]
 }
+
+
+people=[]
+
+for group in groups_struc["groups"]:
+  groupname = group["group"]["group_name"]
+  for member in group["group"]["members"]:
+    naam=member["person_name"]
+    email=member["email"]
+    person=[groupname, naam, email]
+    people.append(person.copy())
+
+print(people)
+
+workbook=xlwt.Workbook()
+sheet=workbook.add_sheet('people')
+
+for row in range(len(people)-1):
+  for column in range(3):
+    sheet.write(row, column, people[row][column])
+    print(people[row][column])
+print(sheet)
+workbook.save('/home/devasc/labs/GitJenDeSchepper/InfraCloudJenDeSchepper/Challenges/11/output.xlsx')
