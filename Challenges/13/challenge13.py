@@ -2,7 +2,7 @@ import json
 from webexteamssdk import WebexTeamsAPI
 import requests
 
-current_access_token = "NjgxNjQ4NGQtZTM0Yi00MGEzLThiYTUtOWE5OTgyODllMjJjYTgzM2ZlOTUtMWI3_PE93_ca1cc44d-8847-4e5d-83d7-60b457809daa"
+current_access_token = "N2VhNGRiN2MtNzExOC00MGI4LTllZjctNjNlZGQ2OTMwNzJmZDFmYTI2YmYtYWY1_PE93_ca1cc44d-8847-4e5d-83d7-60b457809daa"
 api = WebexTeamsAPI(access_token=current_access_token)
 access_token = current_access_token
 

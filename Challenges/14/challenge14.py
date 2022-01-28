@@ -10,9 +10,9 @@ class User:
         return f'<User: {self.username}>'
 
 users = []
-users.append(User(id=1, username='Anthony', password='password'))
-users.append(User(id=2, username='Becca', password='secret'))
-users.append(User(id=3, username='Carlos', password='somethingsimple'))
+users.append(User(id=1, username='Jen', password='password'))
+users.append(User(id=2, username='Ayoub', password='secret'))
+users.append(User(id=3, username='Mahmoud', password='somethingsimple'))
 
 
 app = Flask(__name__)
@@ -52,4 +52,4 @@ def profile():
     return render_template('profile.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5060)
+    app.run()
